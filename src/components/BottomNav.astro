@@ -1,0 +1,62 @@
+---
+import Home from "@/icons/Home.astro";
+import Shorts from "@/icons/Shorts.astro";
+import Subscriptions from "@/icons/Subscriptions.astro";
+---
+
+<footer
+  class="fixed bottom-0 w-full h-12 bg-white shadow dark:bg-[#0F0F0F] sm:hidden border-t border-gray-300 dark:border-gray-600"
+>
+  <div
+    class="w-full mx-auto h-full px-2 pt-1 flex items-center justify-between"
+  >
+    <div
+      class="flex items-center justify-between text-xs roboto-regular text-black dark:text-white h-full w-full"
+    >
+      <!-- Home -->
+      <a href="#" class="flex flex-col items-center justify-center h-full w-16">
+        <div class="w-6 h-6 flex items-center justify-center">
+          <Home />
+        </div>
+        <span class="text-xs font-regular mt-1">Inicio</span>
+      </a>
+
+      <!-- Shorts -->
+      <a href="#" class="flex flex-col items-center justify-center h-full w-16">
+        <div class="w-6 h-6 flex items-center justify-center">
+          <Shorts />
+        </div>
+        <span class="text-xs font-regular mt-1">Shorts</span>
+      </a>
+
+      <!-- Botón "+" -->
+      <a href="#" class="flex flex-col items-center justify-center h-full w-16">
+        <div
+          class="p-1 rounded-full w-8 h-8 flex items-center justify-center text-black border-2 border-black text-3xl roboto-light"
+        >
+          +
+        </div>
+      </a>
+      <!-- Subscriptions -->
+      <a href="#" class="flex flex-col items-center justify-center h-full w-16">
+        <div class="w-6 h-6 flex items-center justify-center">
+          <Subscriptions />
+        </div>
+        <span class="text-xs font-regular mt-1">Suscripciones</span>
+      </a>
+
+      <!-- Avatar -->
+      <a href="#" class="flex flex-col items-center justify-center h-full w-16">
+        <div class="w-6 h-6 flex items-center justify-center">
+          <img
+            draggable="false"
+            class="rounded-full w-full h-full"
+            alt="Imagen de avatar"
+            src="https://yt3.ggpht.com/TrYl52uBXv7s-E-hfr9I77993ROMOGvQR3rJ9P7fp_Z7oDkaxhpRbIT5Fm-AQMvoFVP3OLIEzQ=s88-c-k-c0x00ffffff-no-rj"
+          />
+        </div>
+        <span class="text-xs font-regular mt-1">Tú</span>
+      </a>
+    </div>
+  </div>
+</footer>
