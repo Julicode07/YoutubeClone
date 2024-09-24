@@ -1,14 +1,31 @@
 ---
 import ShowVideos from "../components/ShowVideos.astro";
+import VideoSkeleton from "../components/VideoSkeleton.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Youtube Clone">
   <div class="pl-1 pr-3 sm:ml-20 h-full bg-white dark:bg-[#0F0F0F]">
     <div class="p-4 dark:border-gray-700 sm:mt-14">
-      <div class="grid grid-cols-3 gap-4 mb-4 w-full">
-        <ShowVideos />
-      </div>
+      <ShowVideos server:defer>
+        <div
+          slot="fallback"
+          class="grid grid-cols-3 gap-4 mb-4 w-full place-items-center"
+        >
+          <VideoSkeleton />
+          <VideoSkeleton />
+          <VideoSkeleton />
+          <VideoSkeleton />
+          <VideoSkeleton />
+          <VideoSkeleton />
+          <VideoSkeleton />
+          <VideoSkeleton />
+          <VideoSkeleton />
+          <VideoSkeleton />
+          <VideoSkeleton />
+          <VideoSkeleton />
+        </div>
+      </ShowVideos>
     </div>
   </div>
 </Layout>
