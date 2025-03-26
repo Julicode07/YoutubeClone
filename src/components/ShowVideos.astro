@@ -2,14 +2,14 @@
 const apiKey = import.meta.env.YOUTUBE_API_KEY;
 
 const response = await fetch(
-  `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&regionCode=US&maxResults=30&key=${apiKey}`
+  `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&regionCode=US&maxResults=30&key=${apiKey}`,
 );
 const data = await response.json();
 const videos = data.items;
 
 async function getChannelInfo(channelId) {
   const channelResponse = await fetch(
-    `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${channelId}&key=${apiKey}`
+    `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${channelId}&key=${apiKey}`,
   );
   const channelData = await channelResponse.json();
   return channelData.items[0].snippet.thumbnails.default.url;
@@ -36,7 +36,7 @@ function convertISOToTime(isoDuration) {
 }
 
 const channelsInfo = await Promise.all(
-  videos.map((video) => getChannelInfo(video.snippet.channelId))
+  videos.map((video) => getChannelInfo(video.snippet.channelId)),
 );
 ---
 
@@ -47,7 +47,7 @@ const channelsInfo = await Promise.all(
     videos.map((video, index) => (
       <div
         class="flex flex-col gap-3 w-full h-full"
-        key={video.id || video.snippet.title}
+        id={video.id || video.snippet.title}
       >
         <div class="relative">
           <img
